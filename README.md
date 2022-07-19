@@ -1,4 +1,3 @@
-![Build](https://github.com/90-01Z/Stromae-Back-Office/actions/workflows/build.yml/badge.svg)
 ![Build](https://github.com/90-01Z/Stromae-Back-Office/actions/workflows/docker.yml/badge.svg)
 
 # Stromae-Back-Office
