@@ -1,4 +1,5 @@
-![Build](https://github.com/90-01Z/Stromae-Back-Office/actions/workflows/release.yml/badge.svg)
+![Build](https://github.com/90-01Z/Stromae-Back-Office/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/90-01Z/Stromae-Back-Office/actions/workflows/docker.yml/badge.svg)
 
 # Stromae-Back-Office
 Back-office services for Stromae  
@@ -65,26 +66,6 @@ https://stromae-api-90-01Z.dev.insee.io/swagger-ui.html
 	
 - DataSet
 	- `POST /create-dataset` : Create dataset
-
-## Libraries used
-- spring-boot-jpa
-- spring-boot-security
-- spring-boot-web
-- spring-boot-tomcat
-- spring-boot-test
-- liquibase
-- h2 database
-- postgresql
-- junit
-- springfox-swagger2
-- hibernate
-- hibernate-types-52 (for jsonb type)
-- keycloak 
-
-## Developers
-- Benjamin Claudel (benjamin.claudel@keyconsulting.fr)
-- Samuel Corcaud (samuel.corcaud@keyconsulting.fr)
-- Paul Guillemet (paul.guillemet@keyconsulting.fr)
 
 ## License
 Please check [LICENSE](https://github.com/InseeFr/Queen-Back-Office/blob/master/LICENSE) file

@@ -4,7 +4,6 @@ on:
   push:
     branches-ignore:
       - "develop"
-      - "master"
 
 jobs:
   build:
@@ -48,7 +47,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: inseefr/queen-back-office
+          name: bwerquin/stromae-back-office
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           tags: ${{steps.extract_branch.outputs.prop}}
