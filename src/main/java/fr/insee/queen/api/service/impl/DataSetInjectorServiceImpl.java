@@ -123,8 +123,8 @@ public class DataSetInjectorServiceImpl implements DataSetInjectorService {
 		JsonNode jsonArrayNomenclatureProfMasc = objectMapper.createObjectNode();
 
 		try {
-			jsonArrayNomenclatureProfFem = objectMapper.readTree(new File(getClass().getClassLoader().getResource("db//dataset//9001z//nomenclature//PROF2022F.json").getFile()));
-			jsonArrayNomenclatureProfMasc = objectMapper.readTree(new File(getClass().getClassLoader().getResource("db//dataset//9001z//nomenclature//PROF2022H.json").getFile()));
+			jsonArrayNomenclatureProfFem = objectMapper.readTree(new File("/nomenclature/PROF2022F.json"));
+			jsonArrayNomenclatureProfMasc = objectMapper.readTree(new File("/nomenclature/PROF2022H.json"));
 			
 	 } catch (Exception e) {
 		 e.printStackTrace();
