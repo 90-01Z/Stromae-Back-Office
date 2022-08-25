@@ -47,7 +47,6 @@ public class NomenclatureServiceImpl extends AbstractService<Nomenclature, Strin
     }
 
 	@Override
-	@Cacheable("nomenclature")
 	public Optional<Nomenclature> findById(String id) {
 		return nomenclatureRepository.findById(id);
 	}
