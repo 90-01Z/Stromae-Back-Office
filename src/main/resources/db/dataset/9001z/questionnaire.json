@@ -1,0 +1,294 @@
+{
+    "variables": [
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "COMMENT_QE",
+            "componentRef": "COMMENT-QUESTION"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "SEXE",
+            "componentRef": "l5smdkey"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "PCSH",
+            "componentRef": "l5smshnt"
+        },
+        {
+            "variableType": "COLLECTED",
+            "values": {
+                "COLLECTED": null,
+                "EDITED": null,
+                "INPUTED": null,
+                "FORCED": null,
+                "PREVIOUS": null
+            },
+            "name": "PCSF",
+            "componentRef": "l77qbaot"
+        },
+        {
+            "variableType": "CALCULATED",
+            "expression": "true",
+            "name": "FILTER_RESULT_SEXE",
+            "inFilter": "false"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "SEXE"
+            ],
+            "expression": "(SEXE = \"2\")",
+            "name": "FILTER_RESULT_PCSH",
+            "inFilter": "false"
+        },
+        {
+            "variableType": "CALCULATED",
+            "bindingDependencies": [
+                "SEXE"
+            ],
+            "expression": "(SEXE = \"1\")",
+            "name": "FILTER_RESULT_PCSF",
+            "inFilter": "false"
+        }
+    ],
+    "components": [
+        {
+            "componentType": "Sequence",
+            "hierarchy": {
+                "sequence": {
+                    "id": "l5smlhg0",
+                    "page": "1",
+                    "label": "\"I - \" || \"Prtie 1\""
+                }
+            },
+            "conditionFilter": {
+                "value": "true"
+            },
+            "id": "l5smlhg0",
+            "page": "1",
+            "label": "\"I - \" || \"Prtie 1\""
+        },
+        {
+            "componentType": "Radio",
+            "bindingDependencies": [
+                "SEXE"
+            ],
+            "response": {
+                "name": "SEXE"
+            },
+            "hierarchy": {
+                "sequence": {
+                    "id": "l5smlhg0",
+                    "page": "1",
+                    "label": "\"I - \" || \"Prtie 1\""
+                }
+            },
+            "options": [
+                {
+                    "label": "femme",
+                    "value": "1"
+                },
+                {
+                    "label": "homme",
+                    "value": "2"
+                }
+            ],
+            "conditionFilter": {
+                "value": "true"
+            },
+            "id": "l5smdkey",
+            "page": "2",
+            "label": "\"➡ 1. \" || \"Quel est votre sexe ?\"",
+            "mandatory": false
+        },
+        {
+            "componentType": "Suggester",
+            "bindingDependencies": [
+                "PCSH"
+            ],
+            "options": [
+                {
+                    "label": "Recherche sur liste des professions",
+                    "value": "1"
+                }
+            ],
+            "response": {
+                "name": "PCSH"
+            },
+            "hierarchy": {
+                "sequence": {
+                    "id": "l5smlhg0",
+                    "page": "1",
+                    "label": "\"I - \" || \"Prtie 1\""
+                }
+            },
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "SEXE"
+                ],
+                "value": "(SEXE = \"2\")"
+            },
+            "id": "l5smshnt",
+            "storeName": "PROF2022H",
+            "page": "3",
+            "label": "\"➡ 2. \" || \"Quelle est votre profession ?\"",
+            "mandatory": false,
+            "maxLength": 249
+        },
+        {
+            "componentType": "Suggester",
+            "bindingDependencies": [
+                "PCSF"
+            ],
+            "options": [
+                {
+                    "label": "Recherche sur liste des professions",
+                    "value": "1"
+                }
+            ],
+            "response": {
+                "name": "PCSF"
+            },
+            "hierarchy": {
+                "sequence": {
+                    "id": "l5smlhg0",
+                    "page": "1",
+                    "label": "\"I - \" || \"Prtie 1\""
+                }
+            },
+            "conditionFilter": {
+                "bindingDependencies": [
+                    "SEXE"
+                ],
+                "value": "(SEXE = \"1\")"
+            },
+            "id": "l77qbaot",
+            "storeName": "PROF2022F",
+            "page": "4",
+            "label": "\"➡ 3. \" || \"Quelle est votre profession ?\"",
+            "mandatory": false,
+            "maxLength": 249
+        },
+        {
+            "componentType": "Sequence",
+            "hierarchy": {
+                "sequence": {
+                    "id": "COMMENT-SEQ",
+                    "page": "5",
+                    "label": "\"Commentaire\""
+                }
+            },
+            "conditionFilter": {
+                "value": "true"
+            },
+            "id": "COMMENT-SEQ",
+            "page": "5",
+            "label": "\"Commentaire\""
+        },
+        {
+            "componentType": "Textarea",
+            "bindingDependencies": [
+                "COMMENT_QE"
+            ],
+            "response": {
+                "name": "COMMENT_QE"
+            },
+            "hierarchy": {
+                "sequence": {
+                    "id": "COMMENT-SEQ",
+                    "page": "5",
+                    "label": "\"Commentaire\""
+                }
+            },
+            "conditionFilter": {
+                "value": "true"
+            },
+            "id": "COMMENT-QUESTION",
+            "page": "6",
+            "label": "\"Avez-vous des remarques concernant l'enquête ou des commentaires ?\"",
+            "mandatory": false,
+            "maxLength": 2000
+        }
+    ],
+    "pagination": "question",
+    "lunaticModelVersion": "2.2.10",
+    "modele": "90-01Z",
+    "enoCoreVersion": "2.3.10",
+    "generatingDate": "24-08-2022 15:19:17",
+    "missing": false,
+    "id": "l5smfcuv",
+    "label": "Hackathon-90-01Z",
+    "maxPage": "6",
+    "suggesters": [
+        {
+            "name": "PROF2022H",
+            "fields": [
+                {
+                    "name": "label",
+                    "rules": [
+                        "[\\w]+"
+                    ],
+                    "language": "French",
+                    "min": 2
+                },
+                {
+                    "name": "id"
+                }
+            ],
+            "queryParser": {
+                "type": "tokenized",
+                "params": {
+                    "language": "French",
+                    "pattern": "[\\w]+"
+                }
+            },
+            "version": "1"
+        },
+        {
+            "name": "PROF2022F",
+            "fields": [
+                {
+                    "name": "label",
+                    "rules": [
+                        "[\\w]+"
+                    ],
+                    "language": "French",
+                    "min": 2
+                },
+                {
+                    "name": "id"
+                }
+            ],
+            "queryParser": {
+                "type": "tokenized",
+                "params": {
+                    "language": "French",
+                    "pattern": "[\\w]+"
+                }
+            },
+            "version": "1"
+        }
+    ]
+}
