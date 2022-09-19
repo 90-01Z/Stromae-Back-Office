@@ -253,6 +253,10 @@
                     "language": "French",
                     "min": 2
                 },
+				{
+					"name": "label2",
+					"rules": "soft"
+				},
                 {
                     "name": "id"
                 }
